@@ -1,0 +1,14 @@
+{
+  "version": "2.0.0",
+  "players": 2,
+  "nodes": ["neck","chest","abdomen","outer_thigh","inner_thigh","hands"],
+  "tokenClasses": {"blue": {"base": 1}, "red": {"base": 3}, "black": {"risk": 1}},
+  "initialBag": {"blue": 5, "red": 0, "black": 1},
+  "tension": {"min": 1, "max": 10, "default": 1},
+  "controlThreshold": {"formula": "clamp(11 - tension, 1, 10)"},
+  "turnActions": ["DRAW","BANK","PAUSE","STOP"],
+  "overload": {"condition": "blackCount >= controlThreshold", "bankedScorePreserved": true, "streakScoreLost": true},
+  "scoring": {"additiveFirst": true, "multiplicativeLast": true, "integerMode": "floor"},
+  "consent": {"states": ["GREEN","YELLOW","RED"], "default": "GREEN", "revocable": true, "sessionScoped": true},
+  "privacy": {"physicalData": false, "biometrics": false, "cloudSync": false, "analytics": false}
+}
